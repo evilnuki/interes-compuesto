@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos básicos del documento HTML -->
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres para la página (UTF-8 es el estándar) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Optimiza la página para dispositivos móviles -->
+    <title>Calculadora de Interés Compuesto</title> <!-- Título de la página que aparece en la pestaña del navegador -->
+    
+    <!-- Vinculación de la hoja de estilos externa -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Contenedor principal que engloba toda la calculadora -->
+    <div class="container">
+        <!-- Encabezado principal de la calculadora -->
+        <h1>Calculadora de Interés Compuesto</h1>
+
+        <!-- Subtítulo personalizado -->
+        <h2>Autora: Anouk M.</h2>
+
+        <!-- Descripción sobre el interés compuesto -->
+        <p id="descripcion">
+            Qué es el interés compuesto? <br>
+            <!-- Explicación clara y educativa sobre el interés compuesto, con un ejemplo para mayor claridad -->
+            El interés compuesto es cuando tu dinero no solo genera intereses sobre el monto original (capital), sino también 
+            sobre los intereses que ya has ganado.
+            Esto crea un efecto acumulativo, como una bola de nieve: al principio, el crecimiento es lento, pero con el tiempo, 
+            el interés comienza a generar más interés, haciendo que el dinero crezca mucho más rápido. 
+            Por ejemplo, si inviertes €100 a un 5% de interés anual compuesto, después de un año tendrás €105, pero al segundo 
+            año, el 5% se aplica sobre los €105, dándote €110.25 en vez de solo €110, y así sucesivamente.
+            Cuanto más tiempo dejes el dinero, más grande será el monto final. Esto hace que el interés compuesto sea una 
+            herramienta poderosa para aumentar tus ahorros a largo plazo.
+        </p>        
+
+        <!-- Formulario que captura los datos del usuario para realizar los cálculos -->
+        <form id="investmentForm">
+            <!-- Grupo de entrada para el balance inicial -->
+            <div class="form-group">
+                <label for="initialBalance">Balance Inicial (en €):</label>
+                <input type="number" id="initialBalance" placeholder="Balance inicial">
+            </div>
+        
+            <!-- Grupo de entrada para el depósito periódico -->
+            <div class="form-group">
+                <label for="deposit">Depósito (en €):</label>
+                <input type="number" id="deposit" placeholder="Depósito por frecuencia de capitalización">
+            </div>
+        
+            <!-- Grupo para seleccionar la frecuencia de capitalización -->
+            <div class="form-group">
+                <label for="capitalization">Frecuencia de Capitalización:</label>
+                <!-- Selección de distintas opciones de capitalización (anual, mensual, diaria, etc.) -->
+                <select id="capitalization">
+                    <option value="1">Anual (1 vez por año)</option>
+                    <option value="2">Semestral (2 veces por año)</option>
+                    <option value="4">Trimestral (4 veces por año)</option>
+                    <option value="12">Mensual (12 veces por año)</option>
+                    <option value="24">Quincenal (24 veces por año)</option>
+                    <option value="52">Semanal (52 veces por año)</option>
+                    <option value="365">Diaria (365 veces por año)</option>
+                </select>
+            </div>
+        
+            <!-- Grupo de entrada para la tasa de interés anual -->
+            <div class="form-group">
+                <label for="interestRate">Tasa de Interés Anual (en %):</label>
+                <input type="number" id="interestRate" placeholder="Tasa de interés anual">
+            </div>
+        
+            <!-- Grupo de entrada para la duración en años de la inversión -->
+            <div class="form-group">
+                <label for="duration">Duración (en años):</label>
+                <input type="number" id="duration" placeholder="Duración en años">
+            </div>
+        
+            <!-- Botón para enviar los datos del formulario y ejecutar el cálculo -->
+            <button type="submit">Calcular</button>
+            <!-- Decoración visual debajo del botón (probablemente se estilizará en el CSS) -->
+            <div class="button-line"></div>
+        </form>
+        
+        <!-- Contenedor para mostrar los resultados del cálculo -->
+        <div id="resultadoContainer">
+            <h3>Resultado:</h3>
+            <!-- Aquí se mostrará el balance final calculado después de enviar el formulario -->
+            <p id="resultado">Introduce los datos y calcula para ver el resultado aquí.</p>
+            <!-- Canvas para mostrar el gráfico generado con Chart.js -->
+            <canvas id="resultadoGrafico" width="400" height="200"></canvas>
+        </div>       
+    </div>    
+
+    <!-- Inclusión de la librería Chart.js desde un CDN para generar gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Enlace al archivo JavaScript que contiene la lógica de la calculadora -->
+    <script src="script.js"></script>
+</body>
+</html>
