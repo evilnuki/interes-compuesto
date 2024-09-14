@@ -14,7 +14,7 @@ La calculadora te permite ingresar un balance inicial, los depósitos periódico
 1. Clona este repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+   git clone https://github.com/evilnuki/interes-compuesto.git
 
 2. Abre el archivo index.html en tu navegador.
 
